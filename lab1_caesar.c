@@ -24,6 +24,11 @@ int main(void) {
   }
 
   for (size_t i = 0; i < strlen(input->data) - 1; ++i) {
+    // ascii round edge-case
+    if (input->data[i] > 121) {
+      input->data[i] = 97;
+    }
+
     input->data[i] += input->shift;
   }
 
