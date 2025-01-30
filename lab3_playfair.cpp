@@ -65,10 +65,15 @@ int main() {
 
     int iteration = 0;
 
+    int matrix_main[5][5];
+    
+    int i = 0;
+
     for (const char c : matrix) {
 
         if (iteration % 5 == 0) {
             std::printf("\n");
+            i = 0;
         }
 
         std::printf("%c ", c);
