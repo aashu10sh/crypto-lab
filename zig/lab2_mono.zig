@@ -11,7 +11,6 @@ pub fn main() !void {
     const allocator = gpa.allocator();
     defer _ = gpa.deinit();
 
-    // Define the mapping as a comptime array of tuples
     const map = comptime blk: {
         const entries = .{
             .{ 'a', 'm' },
