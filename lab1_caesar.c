@@ -29,6 +29,10 @@ int main(void) {
       input->data[i] = 97;
     }
 
+    if (input->data[i] == ' '){
+      continue;
+    }
+
     input->data[i] += input->shift;
   }
 

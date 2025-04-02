@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_map>
+#include<string>
 
 #define MAX 300
 
@@ -14,15 +15,17 @@ int main(void) {
       {'g', 'h'}, {'h', 'k'}, {'i', 'l'}, {'j', 'p'}, {'k', 'n'}, {'l', 'u'},
       {'m', 'v'}, {'n', 'y'}, {'o', 'w'}, {'p', 'r'}, {'q', 't'}, {'r', 'a'},
       {'s', 'j'}, {'t', 'g'}, {'u', 'd'}, {'v', 'i'}, {'w', 'e'}, {'x', 'f'},
-      {'y', 'c'}, {'z', 'b'}};
+      {'y', 'c'}, {'z', 'b'}, {' ',' '}};
 
   struct Message input = Message{};
 
   std::printf("enter your message: ");
 
-  std::cin >> input.message;
+  std::getline(std::cin, input.message);
 
   std::string encrypted;
+
+  std::cout << "message: " << input.message << std::endl;
 
   for (const char character : input.message) {
     if (map.find(character) != map.end()) {
@@ -35,7 +38,7 @@ int main(void) {
     }
   }
 
-  printf("encrypted: %s\n", encrypted.c_str());
+  std::cout << "encrypted: " << encrypted << std::endl;
 
   return 0;
 }
